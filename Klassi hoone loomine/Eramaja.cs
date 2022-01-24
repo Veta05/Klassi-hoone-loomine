@@ -14,19 +14,6 @@ namespace Klassi_hoone_loomine
         {
         }
 
-        public int Suurus
-        {
-            set                
-            {
-                    suurus = value;
-                    if (suurus <= 40) status = "Väike maja";
-                    else if (suurus >= 41 && suurus <= 100) status = "Keskmine maja";
-                    else if (suurus > 101) status = "Suur maja";
-
-             }
-                get { return (suurus); }
-        }
-
         public string Status
         {
             get { return status; }
@@ -35,6 +22,18 @@ namespace Klassi_hoone_loomine
         public override void NaitaInfo()
         {
             Console.WriteLine($"Mina olen{status}, minu pindala on {Pindala} m2");
+            if (suurus <= 40)
+            {
+                Console.WriteLine("Väike maja.");
+            }
+            else if (suurus >= 41 && suurus <= 100)
+            {
+                Console.WriteLine("Keskmine maja.");
+            }
+            else
+            {
+                Console.WriteLine("Suur maja.");
+            }
         }
     }
 }
